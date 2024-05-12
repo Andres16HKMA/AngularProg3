@@ -1,0 +1,84 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header bg-transparent">
+            <h1 *ngIf="mode == 1">login</h1>
+            <h1 *ngIf="mode == 2">secondFactor</h1>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <form [formGroup]="theFormGroup">
+                    <div class="row">  
+                        <div class="col-4">
+                            Email:
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="form-control" [(ngModel)]="security.email" 
+                                formControlName="email">
+                            <div
+                                *ngIf="getTheFormGroup.email.errors && (getTheFormGroup.email.dirty || getTheFormGroup.email.touched || trySend)">
+                                <strong *ngIf="getTheFormGroup.email.errors.required" class="msnError">Requerido</strong>
+                                <strong *ngIf="getTheFormGroup.email.errors.email" class="msnError">Invalido</strong> 
+                            </div>
+                        </div> 
+                    </div>
+                    <div *ngIf ="mode==1">
+                    <div class="row">
+                        <div class="col-4">
+                            Password:
+                        </div>
+                        <div class="col-8">
+                            <div *ngIf ="mode==1">
+
+                            <input type="password" class="form-control" [(ngModel)]="security.password"
+                                formControlName="password">
+                            <div
+                                *ngIf="getTheFormGroup.password.errors && (getTheFormGroup.password.dirty || getTheFormGroup.password.touched || trySend)">
+                                <strong *ngIf="getTheFormGroup.password.errors.required" class="msnError">Requerido</strong>
+                                <strong *ngIf="getTheFormGroup.password.errors.minlength" class="msnError">Valor minimo 2</strong>
+                                <strong *ngIf="getTheFormGroup.password.errors.maxlength" class="msnError">Valor maximo 10</strong>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div *ngIf ="mode==2">
+                    <div class="row">
+                        <div class="col-4">
+                        Token:
+                        </div>
+                        <div class="col-8">
+                            <div *ngIf ="mode==2">
+
+                            <input type="token" class="form-control" [(ngModel)]="security.token"
+                            formControlName="token">
+                            <strong *ngIf="getTheFormGroup.token?.errors?.required" class="msnError">Requerido</strong> 
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            
+
+                        </div>
+                        <div class="col-8">
+                            <button *ngIf="mode == 1" (click)="login()" class="btn btn-primary btn-block" type="button">loguearse</button>
+                            <button *ngIf="mode == 2" (click)="secondFactor()" class="btn btn-primary btn-block" type="button">SecondFactor</button>
+
+                            
+                        </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>

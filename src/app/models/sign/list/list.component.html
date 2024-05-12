@@ -7,7 +7,7 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent">
-          <h3 class="mb-0">Teatros
+          <h3 class="mb-0">Usuarios
               <!-- Boton de crear al lado derecho -->
               <button type="button" class="btn btn-primary align-right" (click)="create()">Crear</button>
           </h3>
@@ -17,20 +17,19 @@
             <thead>
                 <tr>
                     <th scope="col-1">ID</th>
-                    <th scope="col-1">UBICACION</th>
-                    <th scope="col-4">CAPACIDAD</th>
-                    <th scope="col-4">OPCIONES</th>
+                    <th scope="col-1">NAME</th>
+                    <th scope="col-4">EMAIL</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let actual of theaters">
-                    <td>{{actual.id}}</td>
-                    <td>{{actual.location}}</td>
-                    <td>{{actual.capacity}}</td>
+                <tr *ngFor="let actual of Sign">
+                    <td>{{actual._id}}</td>
+                    <td>{{actual.name}}</td>
+                    <td>{{actual.email}}</td>
                     <td>
-                        <button type="button" class="btn btn-danger"(click)="view(actual.id)">ver</button>
-                        <button type="button" class="btn btn-warning"(click)="update(actual.id)">actualizar</button>
-                        <button type="button" class="btn btn-danger"(click)="delete(actual.id)">eliminar</button>
+                        <button type="button" class="btn btn-danger"(click)="view(actual._id)">ver</button>
+                        <button type="button" class="btn btn-warning"(click)="update(actual._id)">actualizar</button>
+                        <button type="button" class="btn btn-danger"(click)="delete(actual._id)">eliminar</button>
                     </td>
                 </tr>
             </tbody>

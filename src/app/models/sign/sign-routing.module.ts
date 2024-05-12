@@ -13,17 +13,22 @@ const routes: Routes = [
     component:ManageComponent
   },
   {
-    path:'update/:id',
+    path:'uptdate/id',
     component:ManageComponent
   },
   {
     path:'view/:id',
     component:ManageComponent
+  },
+  {
+    path:'delete/:id',
+    component:ManageComponent
   }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TheatersRoutingModule { }
+export class SignRoutingModule { }

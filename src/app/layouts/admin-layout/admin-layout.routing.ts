@@ -13,7 +13,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     {
-        path:"theaters",
-        loadChildren: () => import('src/app/pages/theaters/theaters.module').then(m => m.TheatersModule)
+        path: "security",
+        loadChildren:() => import('src/app/pages/security/security.module').then(m=>m.TheSecurityModule)
+    },
+    {
+        path: "sign",
+        loadChildren:() => import('src/app/pages/sign/sign.module').then(m=>m.SignModule)
     }
 ];

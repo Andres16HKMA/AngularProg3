@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TheatersRoutingModule } from './theaters-routing.module';
+import { SecurityRoutingModule } from './security-routing.module';
 import { ListComponent } from './list/list.component';
 import { ManageComponent } from './manage/manage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,9 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    TheatersRoutingModule,
+    SecurityRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class TheatersModule { }
+export class TheSecurityModule { }
